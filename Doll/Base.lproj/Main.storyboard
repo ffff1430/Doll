@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,96 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Doll" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="orP-0o-I0F">
+                                <rect key="frame" x="40" y="407" width="295" height="160"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="w4R-jt-IJK">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="LNq-Qr-Yu8"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="髮型一"/>
+                                            <segment title="髮型二"/>
+                                            <segment title="髮型三"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="hair:" destination="BYZ-38-t0r" eventType="valueChanged" id="KTC-EQ-0ID"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="riS-rg-foS">
+                                        <rect key="frame" x="0.0" y="60" width="295" height="41"/>
+                                        <segments>
+                                            <segment title="眼鏡一"/>
+                                            <segment title="眼鏡二"/>
+                                            <segment title="眼鏡三"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="glass:" destination="BYZ-38-t0r" eventType="valueChanged" id="60r-8u-Wd4"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="C23-1e-hCe">
+                                        <rect key="frame" x="0.0" y="120" width="295" height="41"/>
+                                        <segments>
+                                            <segment title="衣服一"/>
+                                            <segment title="衣服三"/>
+                                            <segment title="衣服三"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="clothes:" destination="BYZ-38-t0r" eventType="valueChanged" id="zX0-Sk-7WD"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="riS-rg-foS" firstAttribute="height" secondItem="w4R-jt-IJK" secondAttribute="height" id="JJf-d3-Ver"/>
+                                    <constraint firstItem="C23-1e-hCe" firstAttribute="height" secondItem="w4R-jt-IJK" secondAttribute="height" id="srP-OF-IVR"/>
+                                </constraints>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Short 1" translatesAutoresizingMaskIntoConstraints="NO" id="EZy-ZX-fEh">
+                                <rect key="frame" x="127" y="84" width="121" height="113"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Contempt" translatesAutoresizingMaskIntoConstraints="NO" id="ToP-Zt-XCr">
+                                <rect key="frame" x="160" y="97" width="78" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Sunglasses" translatesAutoresizingMaskIntoConstraints="NO" id="qMb-bR-8WE">
+                                <rect key="frame" x="141" y="84" width="93" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Hoodie" translatesAutoresizingMaskIntoConstraints="NO" id="wlk-3f-l9d">
+                                <rect key="frame" x="53" y="191" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="orP-0o-I0F" secondAttribute="trailing" constant="40" id="6Fs-wK-K59"/>
+                            <constraint firstItem="orP-0o-I0F" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="UbR-kt-WhT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="orP-0o-I0F" secondAttribute="bottom" constant="100" id="XJJ-Rk-rND"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="clothesImage" destination="wlk-3f-l9d" id="iFe-Vj-Aoq"/>
+                        <outlet property="glassImage" destination="qMb-bR-8WE" id="VKD-3j-rAJ"/>
+                        <outlet property="hairImage" destination="EZy-ZX-fEh" id="Llr-sz-L8V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="132" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Contempt" width="217" height="220"/>
+        <image name="Hoodie" width="614" height="550"/>
+        <image name="Short 1" width="355" height="426"/>
+        <image name="Sunglasses" width="294" height="104"/>
+    </resources>
 </document>
